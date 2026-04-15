@@ -24,14 +24,18 @@ h1 {
 }
 
 .card-container {
-    width: 30rem;
+    /*  Donner une valeur a ne pas depasser */
+    max-width: 30rem;
+
+    /* Fixer la marge a rogner a l'ecran cible */
+    width: calc(100% - 5rem);
+    
     height: 25rem;
     background-color: rgb(3, 5, 1);
 
     border-radius: 2%;
     padding: 1rem 2rem;
     box-shadow: 0px 0px 25px #1e1f22;
-
 }
 
 .program-list {
@@ -67,4 +71,49 @@ h1 {
     text-decoration: none; 
     border-radius: 5px; 
     font-weight: bold; 
+}
+
+
+/* Rendre le responsive Dynamique selon l'ecran */
+/* Avec le flex Box */
+
+@media screen and (max-width: 580px) {
+  .card-container {
+    width: calc(100% - 10rem);
+    height: 28rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-container {
+    padding: 1rem 2rem;
+  }
+  
+  /* Ajuster la taille des H1 & P pour permettre un meilleure Wrapping */
+  h1 {
+    font-size: large;
+  }
+
+  p {
+    font-size: small;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .card-container {
+    width: calc(100% - 5rem);
+  }
+
+}
+
+@media screen and (max-width: 250px) {
+  .card-container {
+    height: 35rem;
+  }
+  h1 {
+    font-size: medium;
+  }
+  p, li {
+    font-size: smaller;
+  }
 }
